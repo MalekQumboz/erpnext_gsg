@@ -38,6 +38,17 @@ app_license = "MIT"
 
 # Home Pages
 # ----------
+doctype_js = {
+	"Journal Entry": "public/js/journal_entry.js",
+	"Payment Entry": "public/js/payment_entry.js"
+}
+
+doc_events = {
+	"Material Request": {
+		"on_submit": "erpnext_gsg.erpnext_gsg.doc_event.material_request.create_new_stock_entry",
+	}
+}
+
 
 # application home page (will override Website Settings)
 # home_page = "login"

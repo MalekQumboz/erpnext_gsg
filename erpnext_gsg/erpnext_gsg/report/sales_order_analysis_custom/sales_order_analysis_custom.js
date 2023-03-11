@@ -1,0 +1,81 @@
+// Copyright (c) 2023, Malek Qumboz and contributors
+// For license information, please see license.txt
+/* eslint-disable */
+
+frappe.query_reports["Sales Order Analysis custom"] = {
+	"filters": [
+		{
+			"fieldname": "company",
+			"label": __("Company"),
+			"fieldtype": "Link",
+			"width": "80",
+			"options": "Company",
+			"reqd": 1,
+			"default": frappe.defaults.get_default("company")
+		},
+		{
+			"fieldname":"from_date",
+			"label": __("From Date"),
+			"fieldtype": "Date",
+			"width": "80",
+			"reqd": 1,
+			"default": frappe.datetime.add_months(frappe.datetime.get_today(), -1),
+		},
+		{
+			"fieldname":"to_date",
+			"label": __("To Date"),
+			"fieldtype": "Date",
+			"width": "80",
+			"reqd": 1,
+			"default": frappe.datetime.get_today()
+		},
+		{
+			"fieldname":"from_time",
+			"label": __("From Time"),
+			"fieldtype": "Time",
+			"width": "80",
+			"reqd": 1,
+			"default": "00:00:00",
+		},
+		{
+			"fieldname":"to_time",
+			"label": __("To Time"),
+			"fieldtype": "Time",
+			"width": "80",
+			"reqd": 1,
+			"default": "23:59:00"
+		},
+		{
+			"fieldname": "sales_order",
+			"label": __("Sales Order"),
+			"fieldtype": "MultiSelectList",
+			"width": "80",
+			"options": "Sales Order",
+			"get_data": function(txt) {
+				return frappe.db.get_link_options("Sales Order", txt);
+			},
+			"get_query": () =>{
+				return {
+					filters: { "docstatus": 1 }
+				}
+			}
+		},
+		{
+			"fieldname": "status",
+			"label": __("Status"),
+			"fieldtype": "MultiSelectList",
+			"width": "80",
+			get_data: function(txt) {
+				let status = ["To Bill", "To Deliver", "To Deliver and Bill", "Completed"]
+				let options = []
+				for (let option of status){
+					options.push({
+						"value": option,
+						"label": __(option),
+						"description": ""
+					})
+				}
+				return options
+			}
+		}]
+};

@@ -1,0 +1,47 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-03-10 22:06:52.713066",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends": "HR",
+ "extends_another_page": 1,
+ "hide_custom": 0,
+ "icon": "hr",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "HR GSG",
+ "links": [],
+ "modified": "2023-03-10 22:06:52.713066",
+ "modified_by": "Administrator",
+ "module": "Erpnext Gsg",
+ "name": "HR GSG",
+ "onboarding": "Human Resource",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "restrict_to_domain": "",
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Employee Excuse application",
+   "link_to": "Employee Excuse application",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "",
+   "label": "Attendance Working Hours",
+   "link_to": "Attendance Working Hours",
+   "type": "Report"
+  },
+  {
+   "doc_view": "",
+   "label": "To Whom It Concerns",
+   "link_to": "To Whom It Concerns",
+   "type": "DocType"
+  }
+ ]
+}
